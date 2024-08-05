@@ -1,3 +1,2 @@
 ignore:
-  - "package1/test/test_package1.cpp"
-  - "package2/test/test_package2.cpp"
+  - "**/test/**/*"
