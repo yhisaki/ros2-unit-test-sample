@@ -36,13 +36,13 @@ jobs:
 
       - name: Test
         run: |
-          . /opt/ros/$ROS_DISTRO/setup.sh
+          . /opt/ros/humble/setup.sh
           . install/setup.sh
           colcon test
 
       - name: Generate LCOV report
         run: |
-          . /opt/ros/$ROS_DISTRO/setup.sh
+          . /opt/ros/humble/setup.sh
           . install/setup.sh
           colcon lcov-result --filter "*/test/*"
 
