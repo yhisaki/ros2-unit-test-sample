@@ -21,17 +21,16 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y lcov
-          pip install colcon-lcov-result
+          sudo apt-get install -y lcov python3-colcon-lcov-result
 
       - name: Build
         run: |
-          . /opt/ros/$ROS_DISTRO/setup.sh
+          . /opt/ros/humble/setup.sh
           colcon build --symlink-install --cmake-args -DBUILD_TESTING=true -DCMAKE_CXX_FLAGS='-fprofile-arcs -ftest-coverage' -DCMAKE_C_FLAGS='-fprofile-arcs -ftest-coverage'
 
       - name: Initial LCOV
         run: |
-          . /opt/ros/$ROS_DISTRO/setup.sh
+          . /opt/ros/humble/setup.sh
           . install/setup.sh
           colcon lcov-result --initial
 
@@ -48,6 +47,9 @@ jobs:
           colcon lcov-result --filter "*/test/*"
 
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: false
+          verbose: true
+          flags: total
+          token: ${{ secrets.CODECOV_TOKEN }}

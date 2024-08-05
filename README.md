@@ -1,4 +1,4 @@
-# Sample repository for ROS2 unit testing and reporting using GitHub Actions
+# Sample repository for ROS2 unit testing
 
 ## Build
 
