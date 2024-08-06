@@ -11,7 +11,7 @@ ament_auto_add_library(package1 SHARED
 if(BUILD_TESTING)
   ament_auto_find_test_dependencies()
   ament_add_gtest(test_package1
-    test/test_package1.cpp)
+    test/src/test_package1.cpp)
   target_link_libraries(test_package1 package1)
 endif()
 
