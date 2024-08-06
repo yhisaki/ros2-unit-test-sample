@@ -26,12 +26,13 @@ jobs:
       - name: Build
         run: |
           . /opt/ros/humble/setup.sh
-          colcon build --symlink-install --cmake-args -DBUILD_TESTING=true -DCMAKE_CXX_FLAGS='-fprofile-arcs -ftest-coverage' -DCMAKE_C_FLAGS='-fprofile-arcs -ftest-coverage'
+          colcon build --symlink-install --cmake-args -DBUILD_TESTING=true -DCMAKE_CXX_FLAGS='-fprofile-arcs -ftest-coverage -fno-elide-constructors -fno-default-inline' -DCMAKE_C_FLAGS='-fprofile-arcs -ftest-coverage -fno-elide-constructors -fno-default-inline'
 
       - name: Initial LCOV
         run: |
           . /opt/ros/humble/setup.sh
           . install/setup.sh
+          colcon lcov-result --zero-counters
           colcon lcov-result --initial
 
       - name: Test
@@ -53,3 +54,9 @@ jobs:
           verbose: true
           flags: total
           token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Deploy lcov reports to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./lcov
