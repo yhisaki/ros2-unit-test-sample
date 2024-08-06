@@ -2,6 +2,8 @@
 
 [![codecov](https://codecov.io/gh/yhisaki/ros2-unit-test-sample/graph/badge.svg?token=8I9YGKOEVV)](https://codecov.io/gh/yhisaki/ros2-unit-test-sample)
 
+[LCOV](https://yhisaki.github.io/ros2-unit-test-sample/index.html)
+
 ## Build
 
 ```sh
