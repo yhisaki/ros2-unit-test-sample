@@ -56,8 +56,8 @@ FN:4,_ZN12Package2NodeC2Ev
 FN:12,_ZN12Package2Node9subscribeESt10shared_ptrIN8std_msgs3msg6Int32_ISaIvEEEE
 FN:17,_ZN12Package2Node7publishEv
 FNDA:1,_ZN12Package2Node7publishEv
-FNDA:1,_ZN12Package2Node9subscribeESt10shared_ptrIN8std_msgs3msg6Int32_ISaIvEEEE
 FNDA:1,_ZN12Package2NodeC2Ev
+FNDA:1,_ZN12Package2Node9subscribeESt10shared_ptrIN8std_msgs3msg6Int32_ISaIvEEEE
 FNF:3
 FNH:3
 BRDA:4,0,0,1
