@@ -1,0 +1,20 @@
+name: Echo
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+jobs:
+  echo-strategy:
+    if: ${{ !(matrix.name == 'world' && contains(github.event.pull_request.labels.*.name, 'skip-world')) }}
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      matrix:
+        name: [hello, world]
+
+    steps:
+      - name: Echo strategy
+        run: echo "Running on ${{ runner.os }} with ${{ matrix.name }}"
