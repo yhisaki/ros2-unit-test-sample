@@ -19,6 +19,9 @@ jobs:
         runner: [ubuntu-latest]
 
     steps:
+      - name: Echo SKIP
+        run: echo "SKIP is ${{ env.SKIP }}"
+
       - name: Echo strategy
         if: ${{ !env.SKIP }}
         run: echo "Running on ${{ runner.os }} with ${{ matrix.name }}"
