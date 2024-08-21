@@ -1,0 +1,16 @@
+name: Echo PR Labels
+
+on:
+  pull_request:
+    types: [opened, labeled, unlabeled, synchronize]
+
+jobs:
+  echo-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo PR Labels
+        run: |
+          echo "PR Labels:"
+          for label in ${{ toJson(github.event.pull_request.labels.*.name) }}; do
+            echo $label
+          done
