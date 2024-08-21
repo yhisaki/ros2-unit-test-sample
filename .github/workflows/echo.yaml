@@ -23,5 +23,5 @@ jobs:
         run: echo "SKIP is ${{ env.SKIP }}"
 
       - name: Echo strategy
-        if: ${{ !env.SKIP }}
+        if: ${{ env.SKIP != 'true' }}
         run: echo "Running on ${{ runner.os }} with ${{ matrix.name }}"
