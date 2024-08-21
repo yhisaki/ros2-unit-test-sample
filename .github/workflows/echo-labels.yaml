@@ -12,3 +12,6 @@ jobs:
         run: |
           echo "PR Labels:"
           echo '${{ toJson(github.event.pull_request.labels.*.name) }}' | jq -r '.[]'
+      - name: Echo contain hello
+        run: |
+            echo "Contain hello: ${{ contains(github.event.pull_request.labels.*.name, 'hello') }}"
