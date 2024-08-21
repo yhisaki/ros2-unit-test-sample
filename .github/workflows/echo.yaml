@@ -11,15 +11,14 @@ on:
 jobs:
   echo-strategy:
     runs-on: ${{ matrix.runner }}
+    env:
+      SKIP: ${{ matrix.name == 'world' && contains(github.event.pull_request.labels.*.name, 'skip-world') }}
     strategy:
       matrix:
         name: [hello, world]
         runner: [ubuntu-latest]
 
     steps:
-      - name: Check if we should skip this job
-        if: ${{ matrix.name == 'world' && contains(github.event.pull_request.labels.*.name, 'skip-world') }}
-        run: exit 0
-
       - name: Echo strategy
+        if: ${{ !env.SKIP }}
         run: echo "Running on ${{ runner.os }} with ${{ matrix.name }}"
