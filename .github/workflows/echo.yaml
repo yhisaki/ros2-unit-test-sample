@@ -7,14 +7,19 @@ on:
       - synchronize
       - reopened
       - labeled
+
 jobs:
   echo-strategy:
-    if: ${{ !(matrix.name == 'world' && contains(github.event.pull_request.labels.*.name, 'skip-world')) }}
     runs-on: ${{ matrix.runner }}
     strategy:
       matrix:
         name: [hello, world]
+        runner: [ubuntu-latest]
 
     steps:
+      - name: Check if we should skip this job
+        if: ${{ matrix.name == 'world' && contains(github.event.pull_request.labels.*.name, 'skip-world') }}
+        run: exit 0
+
       - name: Echo strategy
         run: echo "Running on ${{ runner.os }} with ${{ matrix.name }}"
