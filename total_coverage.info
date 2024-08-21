@@ -2,8 +2,8 @@ TN:
 SF:/home/runner/work/ros2-unit-test-sample/ros2-unit-test-sample/package1/src/package1.cpp
 FN:3,_Z4funcbbb
 FN:23,_Z9add_worldNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-FNDA:1,_Z9add_worldNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 FNDA:2,_Z4funcbbb
+FNDA:1,_Z9add_worldNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 FNF:2
 FNH:2
 BRDA:5,0,0,2
@@ -55,8 +55,8 @@ SF:/home/runner/work/ros2-unit-test-sample/ros2-unit-test-sample/package2/src/pa
 FN:4,_ZN12Package2NodeC2Ev
 FN:12,_ZN12Package2Node9subscribeESt10shared_ptrIN8std_msgs3msg6Int32_ISaIvEEEE
 FN:17,_ZN12Package2Node7publishEv
-FNDA:1,_ZN12Package2Node9subscribeESt10shared_ptrIN8std_msgs3msg6Int32_ISaIvEEEE
 FNDA:1,_ZN12Package2NodeC2Ev
+FNDA:1,_ZN12Package2Node9subscribeESt10shared_ptrIN8std_msgs3msg6Int32_ISaIvEEEE
 FNDA:1,_ZN12Package2Node7publishEv
 FNF:3
 FNH:3
