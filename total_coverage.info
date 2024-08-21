@@ -2,8 +2,8 @@ TN:
 SF:/home/runner/work/ros2-unit-test-sample/ros2-unit-test-sample/package1/src/package1.cpp
 FN:3,_Z4funcbbb
 FN:23,_Z9add_worldNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-FNDA:2,_Z4funcbbb
 FNDA:1,_Z9add_worldNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+FNDA:2,_Z4funcbbb
 FNF:2
 FNH:2
 BRDA:5,0,0,2
