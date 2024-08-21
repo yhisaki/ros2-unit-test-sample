@@ -11,6 +11,4 @@ jobs:
       - name: Echo PR Labels
         run: |
           echo "PR Labels:"
-          for label in ${{ toJson(github.event.pull_request.labels.*.name) }}; do
-            echo $label
-          done
+          echo '${{ toJson(github.event.pull_request.labels.*.name) }}' | jq -r '.[]'
